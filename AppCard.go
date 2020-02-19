@@ -97,7 +97,6 @@ func getAllOrders(req *gorequest.SuperAgent, rawCookies string, userAgent string
 	orders := getOrders(offset, limit, req, rawCookies, userAgent)
 	for {
 		offset += limit
-		limit += limit
 		tmpOrders := getOrders(offset, limit, req, rawCookies, userAgent)
 		if len(tmpOrders) == 0 {
 			break
